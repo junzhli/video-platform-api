@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: video-platform-api-deployment
+  labels:
+    app: video-platform-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: video-platform-api
+  template:
+    metadata:
+      labels:
+        app: video-platform-api
+    spec:
+      containers:
+      - name: video-platform-api
+        image: video-platform-api:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 3000
+        resources:
+          limits:
+            memory: "500Mi"
+            cpu: "1"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: video-platform-api-service
+spec:
+  selector:
+    app: video-platform-api
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 8888
