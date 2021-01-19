@@ -31,6 +31,7 @@ Feature
 * Video subscription
 * Video upload
 * Public/Private video
+
 *ongoing*
 * User follow/unfollow
 * Video search autocompletion
