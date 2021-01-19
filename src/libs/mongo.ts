@@ -17,6 +17,7 @@ import {User} from "../models/user";
 import {TempClip, Video, VideoComment, VideoLikes} from "../models/video";
 import {MongoConfig} from "./config";
 import {IMongo, IMongoConfigOptions} from "./types/mongo";
+import mongoose from "mongoose";
 
 
 const log = logger("mongo");
